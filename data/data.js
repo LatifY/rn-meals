@@ -14,6 +14,15 @@ export const CATEGORIES = [
   new Category('c10', 'Summer', '#47fced')
 ];
 
+export const MANAGEMENTS = {
+  REDUX: 0,
+  CONTEXT: 1
+}
+
+export const APP = {
+  management: MANAGEMENTS.CONTEXT
+}
+
 export const MEALS = [
   new Meal(
     'm1',

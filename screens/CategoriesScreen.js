@@ -6,7 +6,6 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import React from "react";
 import { CATEGORIES } from "../data/data";
 import CategoryCard from "../components/CategoryCard";
 import { useNavigation } from "@react-navigation/native";
@@ -17,8 +16,7 @@ const margin = 10;
 const SIZE = (width - margin * column * 2) / column;
 
 const CategoriesScreen = () => {
-  const navigation = useNavigation();
-
+  const navigation = useNavigation()
   const renderCategoryCard = (data) => {
     return (
       <CategoryCard
@@ -32,22 +30,12 @@ const CategoriesScreen = () => {
   };
 
   return (
-    <>
-      <FlatList
-        data={CATEGORIES}
-        keyExtractor={(item) => item.id}
-        renderItem={renderCategoryCard}
-        numColumns={2}
-      />
-    </>
+    <FlatList
+      data={CATEGORIES}
+      keyExtractor={(item) => item.id}
+      renderItem={renderCategoryCard}
+      numColumns={2}
+    />
   );
 };
-
 export default CategoriesScreen;
-
-const styles = StyleSheet.create({
-  row: {
-    flex: 1,
-    justifyContent: "space-around",
-  },
-});

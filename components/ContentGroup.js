@@ -2,9 +2,9 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 const ContentGroup = ({ label, data }) => {
-  const ListDataItem = (item) => {
+  const ListDataItem = (item,index) => {
     return (
-      <View key={item.id} style={styles.containerDataItem}>
+      <View key={index} style={styles.containerDataItem}>
         <Text style={styles.containerDataItemText}>{item}</Text>
       </View>
     );
@@ -17,8 +17,8 @@ const ContentGroup = ({ label, data }) => {
       </View>
       <View style={styles.containerData}>
 
-        {data.map((item) => {
-            return ListDataItem(item)
+        {data.map((item, index) => {
+            return ListDataItem(item, index)
         })}
         {/* <FlatList
           style={{padding: 7}}

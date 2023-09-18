@@ -7,11 +7,13 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
-const Star = () => {
-  const [isPressed, setIsPressed] = useState(false);
+import Color from "../data/colors";
+const Star = ({ activeOnStart, onPress }) => {
+  const [isPressed, setIsPressed] = useState(activeOnStart);
 
   const pressHandler = () => {
     setIsPressed(!isPressed);
+    onPress()
   };
 
   return (
@@ -24,7 +26,7 @@ const Star = () => {
         <FontAwesome
           name={isPressed ? "star" : "star-o"}
           size={24}
-          color="#ffc836"
+          color={Color.Star}
         />
       </TouchableOpacity>
     </View>
